@@ -1,0 +1,87 @@
+laravel ==> php framework
+framework==> group of files ,backages => code esay => resuable
+===
+reason in create laravel 
+php ==> dynamci
+1-
+php ==>connection with DB ===> create more than object
+
+user ==> register , login , show all orders , create product==> create object from DB
+=====> 
+laravel ==> Design pattern ==> Single Tone
+Design pattern ==> logic we use to solve problem
+sigle tone ==> create single object from DB
+object ==> DB   ==> []====>
+
+2- 
+User , Developer ==> deal direct with DB ==> edit in any table==> may cause problem in code  , Code not organized
+all pages in code edit 
+
+laravel ==> Design pattern ==> MVC ===> Model View Controller 
+Model ==> Deal with DB 
+View ==> code html , design ==> user can see
+Controller => Logic
+Code ease in read , edit , Organized
+
+
+================================
+request write in browser ==> route ===> URL ===> in ==> done
+===========================================> Error 404 Not Found
+
+
+Browser ==> URL (allOrders)===> [Route(web, api)]
+
+laravel ==> PHP framework , FullStack framework
+laravel ==> BackEnd ==> generate API ==> Front
+
+Front ==> flutter ===> api ==> routes ==> use DB ===>api 
+               Front ===>api ==> DB  (================)
+======================================================
+laravel ==> Front , BackEnd => generate FullStack webSite
+
+user ==> request ==> Route (web) --> already exist ==> 
+1- callBack Function ==> text , web ===>(view ==> user )
+2- DB ==> Model   ==> View , Code 
+3- Controller ===> Function ==> check function already exist 
+already exist ==> DB===> Return DB ==> 
+already exist ==> DB===> Return DB ==>  View Data ==> View 
+sent User ==> response 
+
+
+
+==============================
+Deal with laravel 
+php ==>  (https://www.php.net/)
+version ==>8.2.1
+PHP Backages Manager ==> Composer (https://getcomposer.org/download/)
+Composer ===> is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
+
+
+
+=============================
+install laravel  project
+1- composer create-project laravel/laravel:^11.0 projectName
+
+2- (olny first time )composer global require laravel/installer
+
+any project ==> laravel new projectName
+
+===========================================
+run command ==> project laravel ==> tool (artisan)
+
+
+to run laravel project 
+1- cd projectName
+2- php artisan serve
+
+
+====================
+stop server ctrl+c
+=============================
+pageName.php ==> pageName.blade.php
+
+blade ==> write code  php with out ==> write tag php
+deal with directives ==> same funtions in php ==> @
+var_dump ==> @dump  ==> execute code with out stop
+dump and die (@dd) ==> @dump + $exist==> show data , stop code
+if ==> @if 
