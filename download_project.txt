@@ -1,0 +1,9 @@
+git clone https://github.com/ayaatadel/laravel_116_BackEnd.git
+
+
+file ==> .envexample ==> copy ==> rename ==> .env
+
+
+ctrl+j ==> cd projectName 
+composer install
+php artisan key:generate 
