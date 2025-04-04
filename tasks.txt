@@ -1,0 +1,2 @@
+handle delete 
+create controller track (id, name ,description , image) ==> index , show , delete 
