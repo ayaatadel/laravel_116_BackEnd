@@ -46,4 +46,47 @@ class StudentController extends Controller
     return view('studentData',compact('student'));
 
     }
+
+   function destroy($id){
+    $student=Student::findOrFail($id);
+    // dump($student);
+    $student->delete();
+    // $students=Student::all();
+    // return view('students',compact("students"));
+
+    return to_route('students.index'); // route name
+
+
+   }
+   function create()
+   {
+    return view('create');
+
+   }
+   function store()
+   {
+    // dump(request()->all());
+    $requestDate=request()->all();
+    // dd($requestDate);
+    Student::create($requestDate);
+    return to_route('students.index');
+   }
+
+   function update($id)
+   {
+    $student=Student::findOrFail($id);
+
+     return view('update',compact('student'));
+   }
+
+   function edit($id)
+   {
+    $student=Student::findOrFail($id);
+    // dump($student);
+    $requestedDate=request()->all();
+    // dd($requestedDate);
+    $student->update($requestedDate);
+    return to_route('students.index');
+
+   }
 }

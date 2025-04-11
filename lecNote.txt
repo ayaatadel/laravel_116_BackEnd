@@ -85,3 +85,36 @@ deal with directives ==> same funtions in php ==> @
 var_dump ==> @dump  ==> execute code with out stop
 dump and die (@dd) ==> @dump + $exist==> show data , stop code
 if ==> @if 
+
+
+=========================================
+day 3 laravel
+
+===> security ===> access ==> change on data ===> access on data
+====> token ===> csrf ===> @csrf====> 419 page expired
+
+
+
+============> create ===========> form ==> all inputs ==> all data to insert
+================================> action of forem ==> take all data insert data base
+
+==========> function in laravel ==> execute action 
+/**
+function ===> reurn view ==> insert data inputs
+function ==> select all input ===> save in data base
+
+====> store data ==> database ===> model ===> $fillabe=[]
+
+
+========================= update 
+====> form ==> all previus data    ==> route ==> function 
+====> updated  data ==> store in data base   ==> route update specific user(id) 
+
+
+
+
+============================= resource
+ php artisan make:controller TrackController --model=Track --resource
+===> controller  
+https://laravel.com/docs/12.x/controllers
+===> route

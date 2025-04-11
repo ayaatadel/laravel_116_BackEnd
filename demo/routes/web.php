@@ -3,9 +3,7 @@
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 // Route::get('/users', function () {
 //     $users = [
 //         [
@@ -75,8 +73,42 @@ Route::get('/', function () {
  * model ==> singular ==> Student
  * table ==> Pluralr ==> students
  */
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::view('/', 'welcome');
 
 // Route::get('/students',[StudentController::class,'getStudents'])->name('students');
 // Route::get('/students/{id}',[StudentController::class,'getStudentData'])->name('studentData');
+Route::get('/students/create',[StudentController::class,'create'])->name('students.create');
+Route::post('/students/store',[StudentController::class,'store'])->name('students.store');
 Route::get('/students',[StudentController::class,'index'])->name('students.index');
 Route::get('/students/{id}',[StudentController::class,'view'])->name('students.view');
+Route::delete('/students/{id}',[StudentController::class,'destroy'])->name('students.destroy');
+Route::get('/students/update/{id}',[StudentController::class,'update'])->name('students.update');
+Route::put('/student/edit/{id}',[StudentController::class,'edit'])->name('students.edit');
+
+
+Route::resource('/tracks',StudentController::class);
+
+
+/**
+ *
+ *
+*  method in route     url                      route name        method in controller
+  PUT             student/edit/{id} ............ students.edit › StudentController@edit
+  GET|HEAD        students ...................  students.index › StudentController@index
+  GET|HEAD        students/create ...........   students.create › StudentController@create
+  POST            students/store .............  students.store › StudentController@store
+  GET|HEAD        students/update/{id} .............. students.update › StudentController@update
+  GET|HEAD        students/{id} ................ students.view › StudentController@view
+  DELETE          students/{id} ................ students.destroy › StudentController@destroy
+  GET|HEAD        tracks .................        tracks.index › StudentController@index
+  POST            tracks ....................... tracks.store › StudentController@store
+  GET|HEAD        tracks/create .............. tracks.create › StudentController@create
+  GET|HEAD        tracks/{track} ................. tracks.show › StudentController@show
+  PUT|PATCH       tracks/{track} ............. tracks.update › StudentController@update
+  DELETE          tracks/{track} ............. tracks.destroy › StudentController@destroy
+  GET|HEAD        tracks/{track}/edit ............ tracks.edit › StudentController@edit
+
+ */
