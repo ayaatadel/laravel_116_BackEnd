@@ -118,3 +118,39 @@ function ==> select all input ===> save in data base
 ===> controller  
 https://laravel.com/docs/12.x/controllers
 ===> route
+
+
+
+
+============================================
+1- migration ===> https://laravel.com/docs/11.x/migrations
+migrations =======> (يهاجر) ====> DB ==> model (relation)  ===> Db inatilized ===> 
+initialization of DB ===> migration     ====> DB (PHP MYadmin)   <==  migrations   ==>    model 
+
+==> Php   ===> export DB ==>(schema )  ==>    logic ==> run project ==> create (migration)
+migration ===> create table in Db + create columns
+
+/**
+create migration ===> php artisan make:migration create_tracks_table
+
+add column to student after create migration
+php artisan make:migration add_phone_to_students_table --table=students
+
+rollback ==> back patch 
+model ==> Controller
+
+
+factory  ==(مصنع)  ==. php artisan make:factory StudentFactory --model=student
+https://laravel.com/docs/11.x/eloquent-factories#main-content
+seeder   ==(تغذيه)  ==. php artisan make:seeder StudentSeeder --model=Student
+
+Run Seeder ==> php artisan db:seed --class=StudentSeeder
+
+=========================================================>
+command to create all (model , controller , seeder , factory , migration )==>php artisan make:model Subject -s -r -m -c -f
+command to create all (model , controller , seeder , factory , migration )==>php artisan make:model Subject --all or -a
+
+
+====================================>
+Search ==> component ==> how to use it
+===> subject ==> name , grade , image

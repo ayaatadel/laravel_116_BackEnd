@@ -17,6 +17,8 @@
         <th scope="col">Name</th>
         <th scope="col">Age</th>
         <th scope="col">Address</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Picture</th>
         <th scope="col">Gender</th>
         <th scope="col">Actions</th>
       </tr>
@@ -27,6 +29,8 @@
             <td>{{ $student->name }}</td>
             <td>{{ $student->age }}</td>
             <td>{{ $student->address }}</td>
+            <td>{{ $student->phone }}</td>
+            <td><img  style="width: 80px; height:80px" src="{{ $student->image }}" alt="student picture"></td>
             <td>{{ $student->gender }}</td>
             <td class="m-2">
                 {{-- <a href="{{ route('students') }}">

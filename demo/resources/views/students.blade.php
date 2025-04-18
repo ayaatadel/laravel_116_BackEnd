@@ -20,7 +20,7 @@
             <button class="btn btn-info ">Create Student</button>
 
         </a>
-        </div>
+    </div>
     <div class="m-3">
         <table class="table w-75 m-auto border ">
             <thead>
@@ -28,6 +28,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Age</th>
+                    <th scope="col">Picture</th>
                     <th scope="col">Address</th>
                     <th scope="col">Gender</th>
                     <th scope="col">Actions</th>
@@ -40,6 +41,8 @@
                     <th scope="row">{{ $student->id}}</th>
                     <td>{{ $student->name }}</td>
                     <td>{{ $student->age }}</td>
+                    <td><img style="width: 60px;heigth=60px" src="{{ $student->image }}" alt="student Image" srcset="">
+                    </td>
                     <td>{{ $student->address }}</td>
                     <td>{{ $student->gender }}</td>
                     <td class="m-2 d-flex justify-content-between">
@@ -59,13 +62,15 @@
 
                             </a>
                         </div>
-                        <form action="{{ route('students.destroy',$student->id) }}" method="post">
-                           @method('DELETE')
-                           @csrf
-                           {{-- generate token ==> sure has access on data --}}
-                            <button class="btn btn-danger">Delete</button>
+                        <div>
+                            <form action="{{ route('students.destroy',$student->id) }}" method="post">
+                                @method('DELETE')
+                                @csrf
+                                {{-- generate token ==> sure has access on data --}}
+                                <button class="btn btn-danger">Delete</button>
 
-                        </form>
+                            </form>
+                        </div>
                     </td>
                 </tr>
                 @endforeach
