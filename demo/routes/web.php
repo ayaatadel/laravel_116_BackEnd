@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TrackController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -89,7 +90,7 @@ Route::get('/students/update/{id}',[StudentController::class,'update'])->name('s
 Route::put('/student/edit/{id}',[StudentController::class,'edit'])->name('students.edit');
 
 
-Route::resource('/tracks',StudentController::class);
+Route::resource('/tracks',TrackController::class);
 
 
 /**

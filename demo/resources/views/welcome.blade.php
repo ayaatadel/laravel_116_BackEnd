@@ -21,7 +21,15 @@
 
 <div class="m-5 text-center">
 <a href="{{ route('students.index') }}">
-    <button class="btn btn-info ">All Students</button>
+    {{-- <button class="btn btn-info ">All Students</button> --}}
+    <x-button class="info" name="All Students"></x-button>
+
+
+</a>
+</div>
+<div class="m-5 text-center">
+<a href="{{ route('tracks.index') }}">
+    <x-button class="warning" name="All Tracks"></x-button>
 
 </a>
 </div>

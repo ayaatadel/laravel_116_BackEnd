@@ -154,3 +154,12 @@ command to create all (model , controller , seeder , factory , migration )==>php
 ====================================>
 Search ==> component ==> how to use it
 ===> subject ==> name , grade , image
+
+=========================================
+component =======> reapeat in code===> file==> call
+
+
+
+pagination ==> count ==> data ==> next previous
+validation and error handling  ===========> 
+model ==> controller

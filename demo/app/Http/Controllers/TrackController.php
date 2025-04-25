@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Track;
 use Illuminate\Http\Request;
 
+
 class TrackController extends Controller
 {
     /**
@@ -12,7 +13,8 @@ class TrackController extends Controller
      */
     public function index()
     {
-        //
+        $tracks = Track::orderBy("id","desc")->paginate(3);
+        return view('tracks.index', compact('tracks'));
     }
 
     /**
@@ -21,6 +23,7 @@ class TrackController extends Controller
     public function create()
     {
         //
+        return view('tracks.create');
     }
 
     /**
@@ -29,6 +32,21 @@ class TrackController extends Controller
     public function store(Request $request)
     {
         //
+        // dd( $request);
+        $request->validate([
+           'name'=>'required|unique:tracks,name|min:2',
+           'logo'=>'required|unique:tracks,logo'
+        ],[
+            'name.required'=>'track name is required',
+            'name.min'=>'track name at leat two characters',
+            'name.unique'=>'track name must be uique',
+            'logo.required'=>'track logo is required',
+
+        ]);
+        $requestedData=$request->all();
+        Track::create($requestedData);
+        return to_route('tracks.index');
+
     }
 
     /**
@@ -37,7 +55,8 @@ class TrackController extends Controller
     public function show(Track $track)
     {
         //
-        dump($track);
+        // dump($track);
+        return view('tracks.view',compact('track'));
     }
 
     /**
@@ -62,5 +81,9 @@ class TrackController extends Controller
     public function destroy(Track $track)
     {
         //
+        $track->delete();
+        return to_route('tracks.index');
+
+
     }
 }

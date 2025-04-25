@@ -6,18 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>All Users</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
+
+<x-BootstrapCss></x-BootstrapCss>
 </head>
 
 <body>
+    <x-NavBar></x-NavBar>
     {{-- @dump($students) --}}
     <h1 class="text-success m-3">
-        All Students Data
+
     </h1>
     <div class="m-5 text-center">
         <a href="{{ route('students.create') }}">
-            <button class="btn btn-info ">Create Student</button>
+            {{-- <button class="btn btn-info ">Create Student</button> --}}
+            <x-button class="info" name="Create Student"></x-button>
 
         </a>
     </div>
@@ -52,13 +55,17 @@
                         </a> --}}
                         <div>
                             <a href="{{ route('students.view',$student->id) }}">
-                                <button class="btn btn-warning">View</button>
+                                {{-- <button class="btn btn-warning">View</button> --}}
+                                <x-button class="warning" name="View"></x-button>
+
 
                             </a>
                         </div>
                         <div>
                             <a href="{{ route('students.update',$student->id) }}">
-                                <button class="btn btn-info">Update </button>
+                                {{-- <button class="btn btn-info">Update </button> --}}
+                                <x-button class="info" name="Update"></x-button>
+
 
                             </a>
                         </div>
@@ -67,7 +74,9 @@
                                 @method('DELETE')
                                 @csrf
                                 {{-- generate token ==> sure has access on data --}}
-                                <button class="btn btn-danger">Delete</button>
+                                {{-- <button class="btn btn-danger">Delete</button> --}}
+                                <x-button class="danger" name="Delete"></x-button>
+
 
                             </form>
                         </div>
@@ -78,12 +87,17 @@
 
             </tbody>
         </table>
+        <div class="d-flex justify-content-center align-items-center mt-5">
+            {{ $students->links() }}
+        </div>
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+    </script> --}}
+    <x-BootstrapJs></x-BootstrapJs>
+
 </body>
 
 </html>
