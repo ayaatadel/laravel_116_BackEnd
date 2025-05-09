@@ -156,7 +156,17 @@ Search ==> component ==> how to use it
 ===> subject ==> name , grade , image
 
 =========================================
+https://laravel.com/docs/11.x/blade#components
 component =======> reapeat in code===> file==> call
+
+make component ==> php artisan make:component Button
+
+component ===> file ==> app ==> view ==> component ==> component class(add variables)
+       <x-componentName  variableName="value"></x-componentName>
+    <x-button class="warning" name="All Tracks"></x-button>
+
+if their no variables ===>  <x-componentName ></x-componentName>
+component style ==> resources ==> view ==> component ==> style(html)
 
 
 
