@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Track;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -25,6 +26,7 @@ class StudentFactory extends Factory
             'phone' => fake()->phoneNumber(),
             'age' => fake()->numberBetween(18, 25),
         'gender' => fake()->randomElement(['male', 'female']),
+        'track_id'=>Track::inRandomOrder()->first()->id
         ];
     }
 }

@@ -12,16 +12,25 @@
 
 <body>
     <x-NavBar></x-NavBar>
-    <h1 class="text-success m-3">
+    <h1 class="text-success m-5">
 
     </h1>
-    <div class="m-5 text-center">
+   <section class="m-5 d-flex justify-content-around">
+     <div class="m-5 text-center">
         <a href="{{ route('tracks.create') }}">
 
             <x-button class="info" name="Create track"></x-button>
 
         </a>
     </div>
+    <div class="m-5 text-center">
+        <a href="{{ route('students.index') }}">
+
+            <x-button class="success" name="All Students"></x-button>
+
+        </a>
+    </div>
+   </section>
     <div class="m-3">
         <table class="table w-75 m-auto border ">
             <thead>

@@ -1,2 +1,9 @@
 handle delete 
 create controller track (id, name ,description , image) ==> index , show , delete 
+
+
+===========================> create all i do 
+===> many to many ====> 
+students , courses 
+view students ==> table ==> all courses ==> 
+view courses ==> table ==> all students ==> 

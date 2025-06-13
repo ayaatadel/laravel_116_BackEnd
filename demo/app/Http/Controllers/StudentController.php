@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\Track;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -61,7 +62,8 @@ class StudentController extends Controller
    }
    function create()
    {
-    return view('create');
+    $tracks=Track::all();
+    return view('create',compact('tracks'));
 
    }
    function store()

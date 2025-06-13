@@ -43,6 +43,41 @@
 </div>
 
 
+
+{{-- realation ===> students   ==> array --}}
+
+{{-- @dump($track->students) --}}
+
+@if ($track->students)
+<table class="table table-bordered w-75 m-auto">
+    <thead>
+        <th scope="col"> Student ID</th>
+        <th scope="col"> Student Name</th>
+        <th scope="col"> Action</th>
+    </thead>
+    <tbody>
+
+        @foreach ($track->students as $student )
+<tr>
+    <td>
+        {{ $student->id }}
+    </td>
+    <td>
+        {{ $student->name}}
+    </td>
+    <td>
+       <a href="{{ route('tracks.index') }}">
+    <button class="btn btn-success">Back</button>
+</a>
+    </td>
+</tr>
+        @endforeach
+    </tbody>
+</table>
+
+@endif
+
+
     <x-BootstrapJs></x-BootstrapJs>
 </body>
 

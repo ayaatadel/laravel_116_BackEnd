@@ -12,54 +12,74 @@
 </head>
 
 <body>
-<h1 class="text-success m-3 ">
-    Create New Student
-</h1>
-   <secton class="text-center m-3">
-    <form  class="w-75 m-auto text-center border border-dark p-2" method="POST" action="{{ route('students.store') }}" >
-        @csrf
-                        {{-- student name --}}
+    <h1 class="text-success m-3 ">
+        Create New Student
+    </h1>
+    <secton class="text-center m-3">
+        <form class="w-75 m-auto text-center border border-dark p-2" method="POST"
+            action="{{ route('students.store') }}">
+            @csrf
+            {{-- student name --}}
 
-        <div class="mb-3">
-            <label for="exampleInputName" class="form-label">Student Name</label>
-            <input name='name' type="text" class="form-control" id="exampleInputName">
-        </div>
-                        {{-- student Email --}}
+            <div class="mb-3">
+                <label for="exampleInputName" class="form-label">Student Name</label>
+                <input name='name' type="text" class="form-control" id="exampleInputName">
+            </div>
+            {{-- student Email --}}
 
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input name='email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-                {{-- student Age--}}
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input name='email' type="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            {{-- student Age--}}
 
-        <div class="mb-3">
-            <label for="exampleInputAge" class="form-label">Student Age</label>
-            <input name='age' type="number" class="form-control" id="exampleInputAge">
-        </div>
-                {{-- student Address --}}
+            <div class="mb-3">
+                <label for="exampleInputAge" class="form-label">Student Age</label>
+                <input name='age' type="number" class="form-control" id="exampleInputAge">
+            </div>
+            {{-- student Address --}}
 
-        <div class="mb-3">
-            <label for="exampleInputAddress" class="form-label">Student Address</label>
-            <input name='address' type="text" class="form-control" id="exampleInputAddress">
-        </div>
+            <div class="mb-3">
+                <label for="exampleInputAddress" class="form-label">Student Address</label>
+                <input name='address' type="text" class="form-control" id="exampleInputAddress">
+            </div>
 
-        {{-- student gender --}}
-        <div class="form-check">
-            <input value='male' class="form-check-input" type="radio" name="gender" id="gender1">
-            <label class="form-check-label" for="gender1">
-                male
-            </label>
-        </div>
-        <div class="form-check">
-            <input value='female' class="form-check-input" type="radio" name="gender" id="gender2" >
-            <label class="form-check-label" for="gender2">
-                female
-            </label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-   </secton>
+            {{-- student gender --}}
+            <div class="form-check">
+                <input value='male' class="form-check-input" type="radio" name="gender" id="gender1">
+                <label class="form-check-label" for="gender1">
+                    male
+                </label>
+            </div>
+            <div class="form-check">
+                <input value='female' class="form-check-input" type="radio" name="gender" id="gender2">
+                <label class="form-check-label" for="gender2">
+                    female
+                </label>
+            </div>
+            {{-- choose student track --}}
+
+            {{-- @dd($tracks) --}}
+
+            <div class="m-3 d-flex justify-content-around ">
+                <label for="trackStudent"> Choose Student Track</label>
+                <select name="track_id" id="trackStudent" class="form-select w-50">
+                    @foreach ($tracks as $track )
+                    <option value="{{ $track->id }}">{{ $track->name }}</option>
+                    @endforeach
+
+                </select>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </secton>
+
+
 
 
     {{-- bootstrap js cdn link --}}

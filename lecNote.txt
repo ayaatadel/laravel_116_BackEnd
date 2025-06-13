@@ -173,3 +173,38 @@ component style ==> resources ==> view ==> component ==> style(html)
 pagination ==> count ==> data ==> next previous
 validation and error handling  ===========> 
 model ==> controller
+================================================================?>
+
+realtion =====> one to one ==>  new table (two not mandatory) ===> id of two tables  , =====> id ==> table (not mandatory)
+realtion =====> one to many  ====> id of one ===> put in table of many
+realtion =====> many to many  ==> new table ===> id of two tables 
+
+==================================>
+students , Track , course 
+https://laravel.com/docs/11.x/migrations#foreign-key-constraints  ===> foreign key
+https://laravel.com/docs/11.x/eloquent-relationships==============> realtion between tables
+=============================>
+students , tracks (one to many ) ===> student can assign in one track , and track has many students
+====> migration  ==> structure (column of table)  ==> id (track)===> table (student)
+===> model   ===> realation  ===> (track,students)
+
+=====================> view ===> student ===> track Name    ===========>   resource -> views -> student
+=====================> view ===> track ===> students Name    ======>  resource -> views -> track
+
+
+=======================================> create student choose track name
+
+
+
+
+
+
+
+
+
+
+
+
+
+====> pivot table  ===> interviews questions
+students , courses (many to many ) ===> student can take many courses , and course can assign many students

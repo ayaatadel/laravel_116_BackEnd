@@ -77,7 +77,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::view('/', 'welcome');
+Route::view('/', 'welcome')->name('home');
 
 // Route::get('/students',[StudentController::class,'getStudents'])->name('students');
 // Route::get('/students/{id}',[StudentController::class,'getStudentData'])->name('studentData');
