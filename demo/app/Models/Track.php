@@ -25,5 +25,9 @@ class Track extends Model
     {
         return $this->hasMany(Student::class);
     }
+     function subjects()  // realation
+    {
+        return $this->hasMany(Student::class);
+    }
 
 }

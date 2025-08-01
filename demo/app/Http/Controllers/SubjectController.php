@@ -13,6 +13,8 @@ class SubjectController extends Controller
     public function index()
     {
         //
+        $subjects=Subject::all();
+        return view('subjects.index',compact('subjects'));
     }
 
     /**
@@ -21,6 +23,7 @@ class SubjectController extends Controller
     public function create()
     {
         //
+        return view('subjects.create');
     }
 
     /**
@@ -29,6 +32,9 @@ class SubjectController extends Controller
     public function store(Request $request)
     {
         //
+        $requetedData=$request->all();
+           Subject::create($requetedData);
+    return to_route('subjects.index');
     }
 
     /**
@@ -37,6 +43,7 @@ class SubjectController extends Controller
     public function show(Subject $subject)
     {
         //
+        return to_route('subjects.show',compact('subject'));
     }
 
     /**
@@ -45,6 +52,9 @@ class SubjectController extends Controller
     public function edit(Subject $subject)
     {
         //
+        //   $subject=Subject::findOrFail($id);
+//
+     return view('update',compact('subject'));
     }
 
     /**
@@ -53,6 +63,9 @@ class SubjectController extends Controller
     public function update(Request $request, Subject $subject)
     {
         //
+         $requestedData=$request->all();
+        $subject->update($requestedData);
+        return to_route('subjects.index');
     }
 
     /**
@@ -61,5 +74,9 @@ class SubjectController extends Controller
     public function destroy(Subject $subject)
     {
         //
+        $subject->delete();
+        return to_route('subjects.index');
     }
+
+    
 }

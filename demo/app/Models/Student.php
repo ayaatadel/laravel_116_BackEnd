@@ -28,4 +28,9 @@ class Student extends Model
         // return $this->belongsTo(Track::class,'track_id','myid');
         return $this->belongsTo(Track::class);
     }
+
+    public function subjects()
+{
+    return $this->belongsToMany(Subject::class);
+}
 }

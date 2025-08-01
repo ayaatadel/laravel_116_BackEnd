@@ -1,0 +1,19 @@
+subjects (courses)
+
+track ==> course   ===> track has many courses
+
+1 to ==> course belong to one track
+  ===========================>
+  student 
+
+
+  =============================> 
+  student create ==> select track 
+  ================>
+  create track ==> show all courses ==> selcet all courses
+  =============> 
+  show 
+  student ==> show name of track 
+  track 
+  ===. all students ==> in track 
+  all courses ==> track

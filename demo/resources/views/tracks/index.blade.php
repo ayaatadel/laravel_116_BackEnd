@@ -62,7 +62,7 @@
                             </a>
                         </div>
                         <div>
-                            <a href="{{ route('tracks.update',$track->id) }}">
+                            <a href="{{ route('tracks.edit',$track->id) }}">
 
                                 <x-button class="info" name="Update"></x-button>
 

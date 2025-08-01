@@ -195,16 +195,11 @@ students , tracks (one to many ) ===> student can assign in one track , and trac
 =======================================> create student choose track name
 
 
-
-
-
-
-
-
-
-
-
-
-
 ====> pivot table  ===> interviews questions
 students , courses (many to many ) ===> student can take many courses , and course can assign many students
+
+==========================
+clear routes cache 
+php artisan route:clear
+php artisan config:clear
+php artisan cache:clear

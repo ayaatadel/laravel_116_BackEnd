@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Subject;
 use App\Models\Track;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,8 @@ class TrackController extends Controller
     public function create()
     {
         //
-        return view('tracks.create');
+        $allSubjects=Subject::all();
+        return view('tracks.create',compact('allSubjects'));
     }
 
     /**
@@ -65,6 +67,8 @@ class TrackController extends Controller
     public function edit(Track $track)
     {
         //
+        return view('tracks.update',compact('track'));
+
     }
 
     /**
@@ -73,6 +77,10 @@ class TrackController extends Controller
     public function update(Request $request, Track $track)
     {
         //
+        $requestedData=$request->all();
+        $track->update($requestedData);
+        return to_route('tracks.index');
+        // return to_route('tracks.show',compact('track'));
     }
 
     /**

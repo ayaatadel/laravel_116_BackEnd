@@ -1,0 +1,43 @@
+use hyper ui in our project ==> 
+
+1-install node  ==> https://nodejs.org/en/download
+node --version || node -v ===> done
+npm --version || npm -v ===> done    ===> node package Manager 
+
+Hyper ui ====> https://www.hyperui.dev/
+
+npm install
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+===================>
+tailwind.config.js  ==> file should be
+
+
+import defaultTheme from 'tailwindcss/defaultTheme';
+import forms from '@tailwindcss/forms';
+
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: [
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+        './resources/js/**/*.js', // ⬅️ for Alpine.js or other interactivity
+        './resources/**/*.html',  // ⬅️ if you use raw HTML files
+    ],
+
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            },
+        },
+    },
+
+    plugins: [
+        forms, // ⬅️ default form styling
+        // You can add more plugins like typography or line-clamp here if needed
+    ],
+};
+=======================>
+command  ==> npm install alpinejs

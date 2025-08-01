@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TrackController;
 use Illuminate\Support\Facades\Route;
 
@@ -77,7 +78,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::view('/', 'welcome')->name('home');
+Route::view('/', 'welcome')->name('welcome');
 
 // Route::get('/students',[StudentController::class,'getStudents'])->name('students');
 // Route::get('/students/{id}',[StudentController::class,'getStudentData'])->name('studentData');
@@ -91,8 +92,10 @@ Route::put('/student/edit/{id}',[StudentController::class,'edit'])->name('studen
 
 
 Route::resource('/tracks',TrackController::class);
-
-
+Route::resource('/subjects',SubjectController::class);
+Route::get('/test',function(){
+    return view('testui');
+});
 /**
  *
  *
