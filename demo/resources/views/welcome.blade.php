@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     {{-- bootstrap CSS --}}
-     <x-BootstrapCss></x-BootstrapCss>
+    <x-BootstrapCss></x-BootstrapCss>
 </head>
 
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
@@ -19,23 +19,42 @@
 
 
     <x-NavBar></x-NavBar>
-<div class="m-5 text-center">
-<a href="{{ route('students.index') }}">
-    {{-- <button class="btn btn-info ">All Students</button> --}}
-    <x-button class="info" name="All Students"></x-button>
+   <div class="d-flex justify-content-around">
+     <div class="m-5 text-center">
+        <a href="{{ route('register') }}">
+            {{-- <button class="btn btn-info ">All Students</button> --}}
+            <x-button class="info" name="register"></x-button>
 
 
-</a>
-</div>
-<div class="m-5 text-center">
-<a href="{{ route('tracks.index') }}">
-    <x-button class="warning" name="All Tracks"></x-button>
+        </a>
+    </div>
+     <div class="m-5 text-center">
+        <a href="{{ route('login') }}">
+            {{-- <button class="btn btn-info ">All Students</button> --}}
+            <x-button class="success" name="login"></x-button>
 
-</a>
 
-</div>
-       {{-- bootstrap JS --}}
-       <x-Bootstrapjs></x-Bootstrapjs>
+        </a>
+    </div>
+     <div class="m-5 text-center">
+        <a href="{{ route('students.index') }}">
+            {{-- <button class="btn btn-info ">All Students</button> --}}
+            <x-button class="info" name="All Students"></x-button>
+
+
+        </a>
+    </div>
+    <div class="m-5 text-center">
+        <a href="{{ route('tracks.index') }}">
+            <x-button class="warning" name="All Tracks"></x-button>
+
+        </a>
+
+    </div>
+
+   </div>
+    {{-- bootstrap JS --}}
+    <x-Bootstrapjs></x-Bootstrapjs>
 </body>
 
 </html>

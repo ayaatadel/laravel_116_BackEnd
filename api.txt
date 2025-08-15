@@ -1,0 +1,95 @@
+===> api
+
+===> laravel   ||    flutter (mobile application)
+=====> وسيط  || api ==> application programming interface
+====> file (links : front ==> use ==> return data)
+
+
+=== user ==> request  (server)
+         <=== response 
+              code : status
+status code 
+100 :information
+200: success
+300:redirect
+400: client error
+500: server error  (back end)
+
+========================> api ==> back end 
+====> front ===> url ==> 
+
+
+============> Send Request 
+CRUDS ==> Create Read(get) Update Delete 
+get data (all data ) ==> get 
+get data (single user (id) ) ==> get 
+send data ==> post
+update data ==> put 
+delete data ==> delete 
+
+
+=========> install api laravel 
+
+cd project ==> cd demo 
+php artisan install: api
+
+
+=====================>
+controller , model , migration 
+logic        database , bulid tables (database)
+
+=================> controller ==> logic 
+php artisan  make:controller API/StudentController ===> StudentController will be in folder API
+
+===========>
+api ==> Routes ==> api
+Route::apiResource('students', StudentController::class);
+
+
+
+===> browser ==> get data 
+send data ==> form ===>
+
+deal with all methods  of route ==> install postman (applicatio) 
+https://www.postman.com/downloads/
+
+
+
+
+
+
+======================== Trait
+
+trait PrintData{
+    function display(msg)
+    {
+        print $msg;
+    }
+
+}
+trait trait2;
+
+class Students {
+    use trait2;
+    use PrintData;
+    public $name;
+    public $message;
+
+//$this->name="mec";
+//$this->message="hello";
+
+$this->display($message)
+
+function print($message)
+{
+    $this->display($message)
+}
+}
+
+
+=============================
+repo gen ai https://github.com/ayaatadel/GenAi_python_2025
+
+chatboot ==> key ==> https://platform.openai.com/settings/organization/api-keys
+==> training ==> data ==> file 
+
